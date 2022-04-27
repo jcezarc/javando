@@ -1,5 +1,2 @@
-from random import choice
-
-def nome_bebê(sobrenome: str, gênero, sugestões: dict) -> str:
-    nome = choice(sugestões[gênero])
-    return f'{nome} {sobrenome}'
+def nome_bebê(método: callable, gênero, sugestões: dict) -> str:
+    return método(sugestões[gênero])

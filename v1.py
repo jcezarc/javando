@@ -1,4 +1,3 @@
-from random import choice
 # --------------------------------
 from typing import (
     Any,
@@ -9,7 +8,6 @@ from typing import (
 ) # <<-------- PRA QUE ISSO?!?!?!
 
 
-def nome_bebê(sobrenome: Text, gênero: Any, sugestões: Dict) -> Text:
+def nome_bebê(método: Callable, gênero: Any, sugestões: Dict[str, List]) -> Text:
     #  ECA! ---------------------------^^
-    nome = choice(sugestões[gênero])
-    return f'{nome} {sobrenome}'
+    return método(sugestões[gênero])
